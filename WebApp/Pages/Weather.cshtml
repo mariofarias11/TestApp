@@ -1,0 +1,37 @@
+﻿@page
+@using WebApp.Dto
+@model WebApp.Pages.WeatherModel
+@{
+
+}
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    
+    td {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
+<table>
+    <thead>
+    <th>@nameof(WeatherForecast.Date)</th>
+    <th>@nameof(WeatherForecast.TemperatureC)</th>
+    <th>@nameof(WeatherForecast.TemperatureF)</th>
+    <th>@nameof(WeatherForecast.Summary)</th>
+    </thead>
+    <tbody>
+        @foreach (var fc in Model.Forecasts!)
+        {
+            <tr>
+                <td>@fc.Date</td>
+                <td>@fc.TemperatureC</td>
+                <td>@fc.TemperatureF</td>
+                <td>@fc.Summary</td>
+            </tr>
+        }
+    </tbody>
+</table>
